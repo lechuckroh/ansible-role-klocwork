@@ -1,0 +1,8 @@
+---
+klocwork_user: klocwork
+klocwork_dir: /opt/tools/klocwork
+klocwork_script_dir: /home/klocwork
+klocwork_installer_src: 
+klocwork_installer_dest: /tmp
+klocwork_license_fileglob: "*.lic"
+klocwork_start_service: no
