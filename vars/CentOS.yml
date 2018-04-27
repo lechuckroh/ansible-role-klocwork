@@ -1,0 +1,10 @@
+---
+klocwork_x86_packages:
+  - redhat-lsb-core.i686
+  - glibc.i686
+  - libgcc.i686
+  - numactl
+
+klocwork_create_dirs:
+  - "{{ klocwork_dir }}"
+  - "{{ klocwork_script_dir }}"

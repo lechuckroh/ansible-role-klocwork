@@ -1,5 +1,17 @@
 ---
+- include_vars: "{{ item }}"
+  with_first_found:
+  - "{{ ansible_distribution }}.yml"
+  - "{{ ansible_os_family }}.yml"
+
 - include_tasks: "install-{{ ansible_os_family }}.yml"
+
+- name: create directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ klocwork_user }}"
+  with_items: "{{ klocwork_create_dirs }}"
 
 - name: change NOFILE limit
   pam_limits:

@@ -3,17 +3,4 @@
   yum:
     name: "{{ item }}"
     state: present
-  with_items:
-  - redhat-lsb-core.i686
-  - glibc.i686
-  - libgcc.i686
-  - numactl
-
-- name: create directories
-  file:
-    path: "{{ item }}"
-    state: directory
-    owner: "{{ klocwork_user }}"
-  with_items:
-  - "{{ klocwork_dir }}"
-  - "{{ klocwork_script_dir }}"
+  with_items: "{{ klocwork_x86_packages }}"
