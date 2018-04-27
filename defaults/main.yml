@@ -6,3 +6,7 @@ klocwork_installer_src:
 klocwork_installer_dest: /tmp
 klocwork_license_fileglob: "*.lic"
 klocwork_start_service: no
+klocwork_port_web: 8080
+klocwork_port_license: 27000
+klocwork_port_vendor: 33133
+klocwork_port_database: 3306

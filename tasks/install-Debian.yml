@@ -53,7 +53,7 @@
 - name: install klocwork
   become: true
   become_user: "{{ klocwork_user }}"
-  shell: "{{ klocwork_installer_path }} -a {{ klocwork_dir }}"
+  shell: "{{ klocwork_installer_path }} -a --klocwork-port {{ klocwork_port_web }} --license-port {{ klocwork_port_license }} --database-port {{ klocwork_port_database }} {{ klocwork_dir }}"
   when: klocwork_install_required
 
 - name: copy klocwork license

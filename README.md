@@ -21,6 +21,9 @@ No requirements
 | `klocwork_installer_dest`   | `/tmp`  | Remote host directory to store klocwork installer |
 | `klocwork_license_fileglob` | `*.lic` | Klocwork license filenames to use |
 | `klocwork_start_service`    | `false` | Set `true` to start klocwork service after installation finished. |
+| `klocwork_port_database`    | `3306`  | Database server port |
+| `klocwork_port_web`         | `8080`  | Klocwork server port |
+| `klocwork_port_license`     | `27000` | LicenseServer server port. |
 
 ## Dependencies
 
