@@ -7,6 +7,10 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - xenial
+    - yakkety
+    - zesty
+    - artful
+    - bionic
 
   galaxy_tags:
     - development

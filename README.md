@@ -3,6 +3,7 @@
 An ansible role for installing Klocwork.
 
 Tested under:
+* Ubuntu 16.04
 * Ubuntu 18.04
 
 ## Requirements
