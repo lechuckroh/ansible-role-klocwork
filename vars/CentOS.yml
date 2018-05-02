@@ -1,5 +1,5 @@
 ---
-klocwork_x86_packages:
+klocwork_dep_packages:
   - redhat-lsb-core.i686
   - glibc.i686
   - libgcc.i686

@@ -20,7 +20,7 @@ No requirements
 | `klocwork_script_dir`       | `/home/klocwork`      | Remote host directory to create scripts for service start/stop |
 | `klocwork_installer_src`    |         | Klocwork installer path. (**required**) |
 | `klocwork_installer_dest`   | `/tmp`  | Remote host directory to store klocwork installer |
-| `klocwork_license_fileglob` | `*.lic` | Klocwork license filenames to use |
+| `klocwork_license_file`     | `*.lic` | Klocwork license files to use |
 | `klocwork_start_service`    | `false` | Set `true` to start klocwork service after installation finished. |
 | `klocwork_port_database`    | `3306`  | Database server port |
 | `klocwork_port_web`         | `8080`  | Klocwork server port |
@@ -39,7 +39,7 @@ No dependencies
   become: true
   vars:
     klocwork_installer_src: ./klocwork/kw-server-installer.18.0.0.939.linux64.sh
-    klocwork_license_fileglob: ./klocwork/*.lic
+    klocwork_license_file: ./klocwork/*.lic
     klocwork_start_service: true
   roles:
   - lechuckroh.klocwork

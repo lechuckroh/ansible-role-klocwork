@@ -1,6 +1,0 @@
----
-- name: install x86 libraries
-  apt:
-    name: "{{ item }}"
-    state: present
-  with_items: "{{ klocwork_x86_packages }}"
