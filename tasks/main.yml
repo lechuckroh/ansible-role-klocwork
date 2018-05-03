@@ -1,13 +1,14 @@
 ---
 - include_vars: "{{ item }}"
   with_first_found:
+  - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
   - "{{ ansible_distribution }}.yml"
   - "{{ ansible_os_family }}.yml"
 
 - name: install dependent packages
   package:
     name: "{{ item }}"
-    state: present
+    state: latest
   with_items: "{{ klocwork_dep_packages }}"
 
 - name: create directories
@@ -61,6 +62,15 @@
   with_fileglob:
   - "{{ klocwork_license_file }}"
 
+- name: copy klocwork clients
+  become: true
+  become_user: "{{ klocwork_user }}"
+  copy:
+    src: "{{ item }}"
+    dest: "{{ klocwork_dir }}/clients/"
+  with_fileglob:
+  - "{{ klocwork_desktop_tools_files }}"
+
 - name: create klocwork start/stop script
   template:
     src: "{{ item }}"
@@ -78,8 +88,6 @@
   args:
     chdir: "~{{ klocwork_user }}"
   when: klocwork_start_service
-  register: start_cmd
-  failed_when: not (start_cmd.rc == 0 or start_cmd.rc == 1)
 
 - name: remove klocwork installer
   file:

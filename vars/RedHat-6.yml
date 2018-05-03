@@ -1,12 +1,12 @@
 ---
 klocwork_dep_packages:
-  - redhat-lsb-core.i686
+  - redhat-lsb
+  - redhat-lsb.i686
   - glibc.i686
   - libgcc.i686
-  - numactl-libs
+  - numactl.x86_64
   - libaio
   - libaio.x86_64
-  - libselinux-python
 
 klocwork_create_dirs:
   - "{{ klocwork_dir }}"
