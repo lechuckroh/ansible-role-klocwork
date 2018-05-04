@@ -9,6 +9,7 @@ Tested under:
 * RHEL 6.9
 * RHEL 7.4
 * Ubuntu 16.04
+* Ubuntu 17.10
 
 ## Requirements
 

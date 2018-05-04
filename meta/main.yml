@@ -16,7 +16,9 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - xenial
-
+    - yakkety
+    - zesty
+    - artful
   galaxy_tags:
     - development
 
