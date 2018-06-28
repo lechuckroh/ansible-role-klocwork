@@ -1,0 +1,33 @@
+---
+- include_vars: "{{ item }}"
+  with_first_found:
+  - "{{ ansible_distribution }}-{{ ansible_distribution_version }}.yml"
+  - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+  - "{{ ansible_distribution }}.yml"
+  - "{{ ansible_os_family }}.yml"
+
+- name: check stop script exists
+  stat:
+    path: "~{{ klocwork_user }}/kwstop.sh"
+  register: kwstop_stat
+
+- name: stop service
+  become: true
+  become_user: "{{ klocwork_user }}" 
+  shell: ./kwstop.sh
+  args:
+    chdir: "~{{ klocwork_user }}"
+  when: kwstop_stat.stat.exists
+
+- name: delete start/stop scripts
+  file:
+    path: "{{ klocwork_script_dir }}/{{ item }}"
+    state: absent
+  with_items:
+  - kwstart.sh
+  - kwstop.sh
+
+- name: delete installation directories
+  file:
+    path: "{{ klocwork_dir }}"
+    state: absent

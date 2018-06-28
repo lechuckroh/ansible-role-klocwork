@@ -1,1 +1,5 @@
 ---
+- name: Klocwork Stop
+  shell: ./kwstop.sh
+  args:
+    chdir: "~{{ klocwork_user }}"

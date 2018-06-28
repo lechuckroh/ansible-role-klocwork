@@ -19,6 +19,7 @@ No requirements
 
 | Variable                    | Default               | Comments                       |
 |:----------------------------|:----------------------|:-------------------------------|
+| `klocwork_state`            | `present`             | `present` to install, `absent` to uninstall |
 | `klocwork_user`             | `klocwork`            | Remote host klocwork run user. Creates user if not exists |
 | `klocwork_dir`              | `/opt/tools/klocwork` | Remote host klocwork installation directory |
 | `klocwork_script_dir`       | `/home/klocwork`      | Remote host directory to create scripts for service start/stop |
