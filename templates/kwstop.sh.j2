@@ -1,2 +1,4 @@
 #!/bin/sh
 {{ klocwork_dir }}/bin/kwservice stop
+
+ps -ef | grep "{{ klocwork_dir }}" | grep -v grep | awk '{print $2}' | xargs kill -9
